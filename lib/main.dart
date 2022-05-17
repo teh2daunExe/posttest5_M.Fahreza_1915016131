@@ -1,0 +1,62 @@
+import 'dart:async';
+
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:posttest5_reza_1915016131/landingPage.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'posttest 5',
+      home: SplashScreen(),
+    );
+  }
+}
+
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({Key? key}) : super(key: key);
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void iniState() {
+    splashScreenStart();
+    super.initState();
+  }
+
+  splashScreenStart() {
+    var duration = Duration(seconds: 1);
+    return Timer(duration, () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) {
+          return landingPage();
+        }),
+      );
+    });
+  }
+
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color.fromARGB(13, 236, 8, 8),
+      body: Center(
+        child: Image.asset(
+          "assets/riot-games-logo.png",
+          width: MediaQuery.of(context).size.width / 2,
+          height: MediaQuery.of(context).size.height / 2,
+        ),
+      ),
+    );
+  }
+}
