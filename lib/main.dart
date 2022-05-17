@@ -23,30 +23,26 @@ class MyApp extends StatelessWidget {
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
-
   @override
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
-  void iniState() {
-    splashScreenStart();
+  void initState() {
     super.initState();
+    splashScreenStart();
   }
 
   splashScreenStart() {
-    var duration = Duration(seconds: 1);
+    var duration = const Duration(seconds: 3);
     return Timer(duration, () {
       Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) {
-          return landingPage();
-        }),
-      );
+          context, MaterialPageRoute(builder: (context) => landingPage()));
     });
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromARGB(13, 236, 8, 8),

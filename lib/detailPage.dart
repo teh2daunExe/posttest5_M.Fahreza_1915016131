@@ -7,7 +7,7 @@ class detailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Detail Character"),
+        title: Text("Detail Skill"),
         backgroundColor: Colors.grey,
       ),
       body: ListView(
@@ -25,10 +25,16 @@ class detailPage extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(
-                      "Agent : Rusher",
+                      "Hunter",
                     ),
                     Text(
-                      "Role : Duelist",
+                      "wind",
+                    ),
+                    Text(
+                      "dark/teleport",
+                    ),
+                    Text(
+                      "Decoy",
                     ),
                   ],
                 ),
